@@ -1,0 +1,23 @@
+<mat-card>
+  <mat-card-title>
+    <label for=""> Search stocks: </label>
+  </mat-card-title>
+
+  <mat-card-content>
+    <input type="text" (keyup)="searchStocks($event.target.value)" />
+  </mat-card-content>
+</mat-card>
+
+<div *ngIf="showResults">
+  <p>
+    results:
+  </p>
+  <div *ngFor="let stock of results">
+
+  <mat-card class="card" (click)="buyDialog(stock)">
+    <mat-card-title>
+      {{ stock.symbol }} --- {{ stock.name }}
+    </mat-card-title>
+  </mat-card>
+  </div>
+</div>

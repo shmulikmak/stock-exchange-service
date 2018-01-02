@@ -1,0 +1,18 @@
+<mat-card class="card">
+  <mat-card-title>
+    {{ data.data.symbol }} --- {{ data.data.name }}
+  </mat-card-title>
+  <mat-card-title>
+    Current Price: {{ data.data.currentPrice }}
+  </mat-card-title>
+  <mat-form-field>
+      quantity: <input matInput type="number" (keyup)="onInputChange($event.target.value)">
+  </mat-form-field>
+  <br>
+  <mat-card-content>
+    <button mat-raised-button color="primary" [disabled]="enableButton" (click)="buyStock()">Buy!</button>
+
+    <button mat-raised-button (click)="closeDialog()">Close</button>
+  </mat-card-content>
+
+</mat-card>
