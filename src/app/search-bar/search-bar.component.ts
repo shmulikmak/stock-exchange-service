@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StockMarketService } from '../services/stock-market.service';
 import { BuyDialogComponent } from '../buy-dialog/buy-dialog.component';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-search-bar',
@@ -25,7 +25,6 @@ export class SearchBarComponent implements OnInit {
         .subscribe(data => {
           this.showResults = true;
           this.results = data['stocks'];
-          console.log(this.results);
         },
         err => {
           console.log('Error occured', err);

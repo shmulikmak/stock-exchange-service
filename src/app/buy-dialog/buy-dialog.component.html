@@ -3,7 +3,7 @@
     {{ data.data.symbol }} --- {{ data.data.name }}
   </mat-card-title>
   <mat-card-title>
-    Current Price: {{ data.data.currentPrice }}
+    Current Price: {{ currentPrice }}
   </mat-card-title>
   <mat-form-field>
       quantity: <input matInput type="number" (keyup)="onInputChange($event.target.value)">

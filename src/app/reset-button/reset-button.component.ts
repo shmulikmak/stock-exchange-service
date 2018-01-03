@@ -15,7 +15,7 @@ export class ResetButtonComponent implements OnInit {
 
   resetAccount() {
     this.stockMarketService.resetAccount()
-      .subscribe(data => console.log('data', data),
+      .subscribe(data => console.log(data),
       err => console.log('Error occured', err));
   }
 }

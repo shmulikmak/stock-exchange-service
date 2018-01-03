@@ -32,9 +32,6 @@ export class StockMarketService {
       });
   }
 
-  checkCurrentPrice(input) {
-  }
-
   getPortfolio() {
     return this.http.get(this.BASE_URL + this.portfolio);
   }

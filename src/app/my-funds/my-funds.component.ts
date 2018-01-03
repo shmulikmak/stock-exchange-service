@@ -16,16 +16,17 @@ export class MyFundsComponent implements OnInit, OnDestroy {
   constructor(public stockMarketService: StockMarketService) { }
 
   ngOnInit() {
-
     TimerObservable.create(0, 5000)
       .takeWhile(() => this.alive)
       .subscribe(() => {
         this.stockMarketService.getPortfolio()
           .subscribe((data) => {
             this.myFunds = data['funds'];
+          },
+          err => {
+            console.log('Error occured', err);
           });
       });
-
   }
 
   ngOnDestroy() {
