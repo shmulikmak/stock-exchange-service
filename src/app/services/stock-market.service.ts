@@ -14,6 +14,7 @@ export class StockMarketService {
   refresh = '/management/refresh';
   portfolio = '/portfolio';
   buy = '/market/buy';
+  deleteAccount = '/management';
 
   constructor(private http: HttpClient) { }
 
@@ -43,6 +44,10 @@ export class StockMarketService {
       'stockSymbol': stockDetails.data.symbol,
       'stockQuantity': userOffer
     });
+  }
+
+  resetAccount() {
+    return this.http.delete(this.BASE_URL + this.deleteAccount);
   }
 
 }

@@ -1,0 +1,11 @@
+header {
+  display: flex;
+}
+
+.my-funds{
+  margin:  auto;
+}
+
+.reset-button {
+  margin:  auto;
+}
