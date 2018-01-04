@@ -1,4 +1,4 @@
-header {
+header, .row-2 {
   display: flex;
 }
 
@@ -8,4 +8,8 @@ header {
 
 .reset-button {
   margin:  auto;
+}
+
+.search-bar, .my-portfolio {
+    flex: 0 0 50%;
 }

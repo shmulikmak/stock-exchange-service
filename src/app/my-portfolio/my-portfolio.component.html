@@ -1,3 +1,49 @@
-<p>
-  my-portfolio works!
-</p>
+<div class="example-container mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource" matSort>
+
+    <!-- name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    </ng-container>
+
+    <!-- symbol Column -->
+    <ng-container matColumnDef="symbol">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> symbol </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+    </ng-container>
+
+    <!-- purchasedQuantity Column -->
+    <ng-container matColumnDef="purchasedQuantity">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> purchased quantity </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.purchasedQuantity}} </mat-cell>
+    </ng-container>
+
+    <!-- purchasePrice Column -->
+    <ng-container matColumnDef="purchasePrice">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> purchase price </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.purchasePrice}} </mat-cell>
+    </ng-container>
+
+    <!-- currentPrice Column -->
+    <ng-container matColumnDef="currentPrice">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> current price </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.currentPrice}} </mat-cell>
+    </ng-container>
+
+    <!-- profitLoss Column -->
+    <ng-container matColumnDef="profitLoss">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> profit/Loss </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.profitLoss}} </mat-cell>
+    </ng-container>
+
+    <!-- Sell Column -->
+    <ng-container matColumnDef="Sell">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Sell </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.Sell}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

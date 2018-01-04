@@ -27,9 +27,11 @@ export class StockMarketService {
 
   refreshStocks() {
     return this.http
-      .get(this.BASE_URL + this.refresh).subscribe(data => {
+      .get(this.BASE_URL + this.refresh)
+      .subscribe(data => {
         console.log(data);
-      });
+      },
+       err => console.log('Error occured', err));
   }
 
   getPortfolio() {
